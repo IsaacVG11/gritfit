@@ -1,0 +1,13 @@
+.category-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    gap: 20px;
+}

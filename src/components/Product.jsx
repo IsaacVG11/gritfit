@@ -1,4 +1,9 @@
 import { useState, useEffect } from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import CardActionArea from '@mui/material/CardActionArea';
 
 export default function Product() {
     const[ products, setProducts ] = useState([]);
@@ -21,14 +26,31 @@ export default function Product() {
     return (
         <div>
             {loading ? <p>Cargando...</p> : <h1>Productos</h1>}
-            {products.map((product) => (
-                <div key={product.id_product}>
-                    <img src={product.image_url} alt={product.product_name}/>
-                    <h2>{product.product_name}</h2>
-                    <p>{product.product_description}</p>
-                    <p>{product.price}</p>
-                </div>
-            ))}
+            <div className="product-container">
+                {products.map((product) => (
+                    <Card key={product.id_product} sx={{ maxWidth: 345}}>
+                        <CardActionArea sx={{display: { xs: 'none', md: 'block' }}}>
+                            <CardMedia
+                                component="img"
+                                height="140"
+                                image={product.image_url}
+                                alt={product.product_name}
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    {product.product_name}
+                                </Typography>
+                                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                                    {product.product_description}
+                                </Typography>
+                                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                                    {product.price}
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                    </Card>
+                ))}
+            </div>
         </div>
     );
 };
