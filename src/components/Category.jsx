@@ -24,7 +24,7 @@ export default function Category() {
     },[]);
 
     return (
-        <div>
+        <div className="category">
             {loading ? <p>Cargando categorías...</p>: <h1>Categorías</h1>}
             <div className="category-container">
                 {categories.map((category) => (

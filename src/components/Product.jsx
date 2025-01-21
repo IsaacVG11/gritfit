@@ -24,7 +24,7 @@ export default function Product() {
     },[]);
 
     return (
-        <div>
+        <div className="product">
             {loading ? <p>Cargando...</p> : <h1>Productos</h1>}
             <div className="product-container">
                 {products.map((product) => (
