@@ -28,16 +28,16 @@ export default function Category() {
             {loading ? <p>Cargando categorías...</p>: <h1>Categorías</h1>}
             <div className="category-container">
                 {categories.map((category) => (
-                    <Card key={category.id_category} sx={{ maxWidth: 345 }}>
+                    <Card key={category.id_category}>
                         <CardActionArea sx={{display: { xs: 'none', md: 'block' } }}>
                             <CardMedia
+                                className="c-media"
                                 component="img"
-                                height="140"
                                 image={category.image_url}
                                 alt={category.category_name}
                             />
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
+                                <Typography className="typo" gutterBottom variant="h5" component="div">
                                     {category.category_name}
                                 </Typography>
                             </CardContent>

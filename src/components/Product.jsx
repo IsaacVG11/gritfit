@@ -28,22 +28,22 @@ export default function Product() {
             {loading ? <p>Cargando...</p> : <h1>Productos</h1>}
             <div className="product-container">
                 {products.map((product) => (
-                    <Card key={product.id_product} sx={{ maxWidth: 345}}>
+                    <Card key={product.id_product}>
                         <CardActionArea sx={{display: { xs: 'none', md: 'block' }}}>
                             <CardMedia
+                                className="c-media"
                                 component="img"
-                                height="140"
                                 image={product.image_url}
                                 alt={product.product_name}
                             />
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
+                                <Typography className="typo" gutterBottom variant="h5" component="div">
                                     {product.product_name}
                                 </Typography>
-                                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                                <Typography className="typo" variant="body2" sx={{ color: 'text.secondary' }}>
                                     {product.product_description}
                                 </Typography>
-                                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                                <Typography className="typo" variant="body2" sx={{ color: 'text.secondary' }}>
                                     {product.price}
                                 </Typography>
                             </CardContent>

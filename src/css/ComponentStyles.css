@@ -2,28 +2,30 @@
 .product {
     min-height: 600px;
     width: 100%;
-    background-color: #213547;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .product-container {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    margin: 0 auto;
 }
 
 /*SECCIÓN DE CATEGORY*/
 .category {
     min-height: 600px;
     width: 100%;
-    background-color: #ffcc00;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .category-container {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    margin: 0 auto;
 }
 
 
@@ -74,6 +76,7 @@
     flex-direction: column;
     justify-content: center;
     width: 50%;
+    text-align: center;
 }
 
 .contact-wrapper h1 {
@@ -111,6 +114,7 @@
     display: flex;
     flex-direction: column;
     gap: 35px;
+    text-align: center;
 }
 
 .contact-socials h3 {
@@ -136,6 +140,14 @@
 }
 
 /*GENERAL CSS*/
+.typo {
+    text-align: center;
+}
+
+.c-media{
+    height: 400px;
+}
+
 button {
     background-color: #000;
     color: #fff;

@@ -1,20 +1,28 @@
 import './css/App.css'
 import "./css/ComponentStyles.css"
+
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import Product from './components/Product.jsx'
 import Category from './components/Category.jsx'
 import Contact from './components/Contact.jsx'
+
+// eslint-disable-next-line react-refresh/only-export-components
 function App() {
   return (
-      <section className="main-screen">
-        <Navbar />
-        <Hero />
-        <Category />
-        <Product />
-        <Contact />
-      </section>
+      <StrictMode>
+          <Navbar />
+          <Hero />
+          <Category />
+          <Product />
+          <Contact />
+      </StrictMode>
   )
 }
 
-export default App
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<App />);
