@@ -3,6 +3,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import EmailIcon from '@mui/icons-material/Email';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
 
 export default function Contact() {
 
@@ -17,12 +18,12 @@ export default function Contact() {
     }
 
     return (
-        <div className="contact-container">
-            <div className="contact-wrapper">
+        <Box className="contact-container">
+            <Box className="contact-wrapper">
                 <h1>CONTACT US</h1>
                 <p>Feel free to contact us anytime. <br/> We will get back to you as soon as we can!</p>
                 <form className="contact-form">
-                    <div className="contact-form-container">
+                    <Box className="contact-form-container">
                         <TextField className="textField" id="outlined-basic" label="Name" variant="standard"
                                    onChange={(e) => setName(e.target.value)}/>
                         <TextField className="textField" id="outlined-basic" label="Email" variant="standard"
@@ -37,24 +38,24 @@ export default function Contact() {
                             onChange={(e) => setMessage(e.target.value)}
                         />
                         <button type="submit" onClick={onSubmit}>Send</button>
-                    </div>
+                    </Box>
                 </form>
-            </div>
-            <div className="contact-socials">
+            </Box>
+            <Box className="contact-socials">
                 <h3>INFO</h3>
-                <div className="contact-socials-item">
+                <Box className="contact-socials-item">
                     <InstagramIcon/>
                     <p>@gritfitcr</p>
-                </div>
-                <div className="contact-socials-item">
+                </Box>
+                <Box className="contact-socials-item">
                     <EmailIcon/>
                     <p>Fitgritcr@gmail.com</p>
-                </div>
-                <div className="contact-socials-item">
+                </Box>
+                <Box className="contact-socials-item">
                     <FacebookIcon/>
                     <p>GritFit CR</p>
-                </div>
-            </div>
-        </div>
+                </Box>
+            </Box>
+        </Box>
     );
 };

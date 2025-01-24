@@ -85,7 +85,7 @@ export default function Category() {
     },[]);
 
     return (
-        <div className="category">
+        <Box className="category">
             {loading ? <p>Cargando categorías...</p>: <h1>OUR MERCH</h1>}
             <Box className="category-container">
                 {categories.map((category) => (
@@ -115,6 +115,6 @@ export default function Category() {
                     </ImageButton>
                 ))}
             </Box>
-        </div>
+        </Box>
     );
 };

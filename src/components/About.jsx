@@ -1,27 +1,29 @@
+import Box from '@mui/material/Box';
+
 export default function About (){
     return (
-        <div className="about">
-            <div className="about-hero-wrapper">
-                <img src={"algo.png"} alt="algo"/>
-                <div className="about-hero-info">
+        <Box className="about">
+            <Box className="about-hero-wrapper">
+                <img src="https://res.cloudinary.com/dmlspkqyz/image/upload/v1736907131/virtualD_pnuura.png" alt="algo"/>
+                <Box className="about-hero-info">
                     <h1> ABOUT US </h1>
-                    <p> Texto pequeño que hable sobre nosotros... </p>
-                </div>
-            </div>
-            <div className="about-wrapper">
-                <div className="block-1">
-                    <img className="img-about" src="src/assets/logo.png" alt="algo"/>
+                    <p> We are a group of three friends which want to make the difference...</p>
+                </Box>
+            </Box>
+            <Box className="about-wrapper">
+                <Box className="block">
+                    <img className="img-about" src="https://res.cloudinary.com/dmlspkqyz/image/upload/v1736907131/virtualD_pnuura.png" alt="algo"/>
                     <p> Texto que acompañe la imagen </p>
-                </div>
-                <div className="block-2">
-                    <img className="img-about" src="src/assets/logo.png" alt="algo"/>
+                </Box>
+                <Box className="block">
+                    <img className="img-about" src="https://res.cloudinary.com/dmlspkqyz/image/upload/v1736907131/virtualD_pnuura.png" alt="algo"/>
                     <p> Texto que acompañe la imagen </p>
-                </div>
-                <div className="block-3">
-                    <img className="img-about" src="src/assets/logo.png" alt="algo"/>
+                </Box>
+                <Box className="block">
+                    <img className="img-about" src="https://res.cloudinary.com/dmlspkqyz/image/upload/v1736907131/virtualD_pnuura.png" alt="algo"/>
                     <p> Texto que acompañe la imagen </p>
-                </div>
-            </div>
-        </div>
+                </Box>
+            </Box>
+        </Box>
     );
 }

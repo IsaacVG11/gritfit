@@ -8,7 +8,7 @@ import Hero from './components/Hero.jsx'
 import Product from './components/Product.jsx'
 import Category from './components/Category.jsx'
 import Contact from './components/Contact.jsx'
-//import About from './components/About.jsx'
+import About from './components/About.jsx'
 
 // eslint-disable-next-line react-refresh/only-export-components
 function App() {
@@ -18,7 +18,7 @@ function App() {
           <Hero />
           <Category />
           <Product />
-          {/**<About /> **/}
+          <About />
           <Contact />
       </StrictMode>
   );

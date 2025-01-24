@@ -4,6 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
+import Box from '@mui/material/Box';
 
 export default function Product() {
     const[ products, setProducts ] = useState([]);
@@ -24,9 +25,9 @@ export default function Product() {
     },[]);
 
     return (
-        <div className="product">
+        <Box className="product">
             {loading ? <p>Cargando...</p> : <h1>PRODUCTS</h1>}
-            <div className="product-container">
+            <Box className="product-container">
                 {products.map((product) => (
                     <Card key={product.id_product}>
                         <CardActionArea sx={{display: { xs: 'none', md: 'block' }}}>
@@ -50,7 +51,7 @@ export default function Product() {
                         </CardActionArea>
                     </Card>
                 ))}
-            </div>
-        </div>
+            </Box>
+        </Box>
     );
 };
