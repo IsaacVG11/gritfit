@@ -25,7 +25,7 @@ export default function Product() {
 
     return (
         <div className="product">
-            {loading ? <p>Cargando...</p> : <h1>Productos</h1>}
+            {loading ? <p>Cargando...</p> : <h1>PRODUCTS</h1>}
             <div className="product-container">
                 {products.map((product) => (
                     <Card key={product.id_product}>

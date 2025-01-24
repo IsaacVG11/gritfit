@@ -1,9 +1,70 @@
 import { useState, useEffect } from "react";
-import CardActionArea from "@mui/material/CardActionArea";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import Card from "@mui/material/Card";
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import ButtonBase from '@mui/material/ButtonBase';
+
+//Funciones-estilos de para componentes de categoría
+const ImageButton = styled(ButtonBase)(() => ({
+    position: 'relative',
+    height: 500,
+
+    '&:hover, &.Mui-focusVisible': {
+        zIndex: 1,
+        '& .MuiImageBackdrop-root': {
+            opacity: 0.15,
+        },
+        '& .MuiImageMarked-root': {
+            opacity: 0,
+        },
+        '& .MuiTypography-root': {
+            border: '4px solid currentColor',
+        },
+    },
+}));
+
+const ImageSrc = styled('span')({
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center 40%',
+});
+
+const Image = styled('span')(({ theme }) => ({
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: theme.palette.common.white,
+}));
+
+const ImageBackdrop = styled('span')(({ theme }) => ({
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    backgroundColor: theme.palette.common.black,
+    opacity: 0.4,
+    transition: theme.transitions.create('opacity'),
+}));
+
+const ImageMarked = styled('span')(({ theme }) => ({
+    height: 3,
+    width: 18,
+    backgroundColor: theme.palette.common.white,
+    position: 'absolute',
+    bottom: -2,
+    left: 'calc(50% - 9px)',
+    transition: theme.transitions.create('opacity'),
+}));
 
 export default function Category() {
     const [ categories, setCategories ] = useState([]);
@@ -25,26 +86,35 @@ export default function Category() {
 
     return (
         <div className="category">
-            {loading ? <p>Cargando categorías...</p>: <h1>Categorías</h1>}
-            <div className="category-container">
+            {loading ? <p>Cargando categorías...</p>: <h1>OUR MERCH</h1>}
+            <Box className="category-container">
                 {categories.map((category) => (
-                    <Card key={category.id_category}>
-                        <CardActionArea sx={{display: { xs: 'none', md: 'block' } }}>
-                            <CardMedia
-                                className="c-media"
-                                component="img"
-                                image={category.image_url}
-                                alt={category.category_name}
-                            />
-                            <CardContent>
-                                <Typography className="typo" gutterBottom variant="h5" component="div">
-                                    {category.category_name}
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
+                    <ImageButton
+                        focusRipple
+                        key={category.id_category}
+                    >
+                        <ImageSrc style={{ backgroundImage: `url(${category.image_url})` }} />
+                        <ImageBackdrop className="MuiImageBackdrop-root" />
+                        <Image>
+                            <Typography
+                                className="category-typography"
+                                component="span"
+                                variant="subtitle1"
+                                color="inherit"
+                                sx={(theme) => ({
+                                    position: 'relative',
+                                    p: 4,
+                                    pt: 2,
+                                    pb: `calc(${theme.spacing(1)} + 5px)`,
+                                })}
+                            >
+                                {category.category_name}
+                                <ImageMarked className="MuiImageMarked-root" />
+                            </Typography>
+                        </Image>
+                    </ImageButton>
                 ))}
-            </div>
+            </Box>
         </div>
     );
 };

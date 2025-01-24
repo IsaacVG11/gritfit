@@ -1,9 +1,41 @@
-/*SECCIÓN DE PRODUCT*/
-.product {
+#root {
+}
+
+.body {
+    margin: 0;
+    padding: 1rem;
+}
+
+/*SECCIÓN DE NAVBAR*/
+.navbar {
+    background-color: #000;
+}
+
+.navbar-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.navbar-buttons:hover {
+    color: olive;
+}
+
+/*SECCIÓN DE ABOUT*/
+.about {
+    margin: 0 auto;
     min-height: 600px;
     width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+}
+
+/*SECCIÓN DE PRODUCT*/
+.product {
+    margin: 0 auto;
+    min-height: 600px;
+    width: 100%;
 }
 
 .product-container {
@@ -15,10 +47,9 @@
 
 /*SECCIÓN DE CATEGORY*/
 .category {
+    margin: 0 auto;
     min-height: 600px;
     width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
 }
 
 .category-container {
@@ -28,12 +59,16 @@
     margin: 0 auto;
 }
 
+.category-typography {
+    text-transform: uppercase;
+    font-weight: bold;
+}
 
 /*SECCIÓN DE HERO*/
 .hero-container {
     position: relative;
     width: 100%;
-    min-height: 600px;
+    min-height: 450px;
     overflow: hidden;
 }
 
@@ -66,7 +101,6 @@
     align-items: center;
     gap: 60px;
     padding: 50px;
-    background-color: #fff;
     color: #000;
     box-sizing: border-box;
 }
@@ -135,7 +169,7 @@
 }
 
 .contact-socials-item svg {
-    color: #ffcc00;
+    color: olivedrab;
     font-size: 40px;
 }
 
@@ -155,9 +189,4 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #ffcc00; /* Efecto hover */
-    color: #000;
 }
